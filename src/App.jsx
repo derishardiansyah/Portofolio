@@ -59,21 +59,22 @@ const App = () => {
       year: "2017",
       department: "Network Engineer",
       company: "PT. Permata Sejahtera Buana",
-    },
-    {
-      year: "2020",
-      department: "Software Developer",
-      company: "Kemendikbud",
+      classRound: "rounded",
+      classYear: "yearExperience",
     },
     {
       year: "2021",
       department: "Web Developer",
-      company: "Direktorat PKK (Ditjen KSDAE - KemenLHK)",
+      company: "Direktorat PKK, Ditjen KSDAE - KemenLHK",
+      classRound: "roundedSecond",
+      classYear: "yearExperienceSecond",
     },
     {
       year: "2023",
-      department: "Full Stack Developer Trainee",
+      department: "Full Stack Developer",
       company: "PT. Phincon",
+      classRound: "roundedThird",
+      classYear: "yearExperienceThird",
     },
   ];
   return (
@@ -192,46 +193,22 @@ const App = () => {
             </div>
           </div>
         </div>
-        <div className="experience" id="experience">
-          <div className="experienceList">
-            <div className="nameExperience">
-              <span>Network Engineer</span>
+        <div className="experience">
+          {experiences.map((exp, index) => (
+            <div className="experienceList" key={index}>
+              <div className="nameExperience">
+                <span>{exp.department}</span>
+              </div>
+              <hr className="lineExperience" />
+              <div className="nameExperience">
+                <span>{exp.company}</span>
+              </div>
+              <div className={exp.classRound}></div>
+              <div className={exp.classYear}>
+                <span>{exp.year}</span>
+              </div>
             </div>
-            <hr className="lineExperience" />
-            <div className="nameExperience">
-              <span>PT. Permata Sejahtera Buana</span>
-            </div>
-            <div className="rounded"></div>
-            <div className="yearExperience">
-              <span>2017</span>
-            </div>
-          </div>
-          <div className="experienceList">
-            <div className="nameExperience">
-              <span>Web Developer</span>
-            </div>
-            <hr className="lineExperience" />
-            <div className="nameExperience">
-              <span>Direktorat PKK, Ditjen KSDAE - KemenLHK</span>
-            </div>
-            <div className="roundedSecond"></div>
-            <div className="yearExperienceSecond">
-              <span>2021</span>
-            </div>
-          </div>
-          <div className="experienceList">
-            <div className="nameExperience">
-              <span>Full Stack Developer</span>
-            </div>
-            <hr className="lineExperience" />
-            <div className="nameExperience">
-              <span>PT. Phincon</span>
-            </div>
-            <div className="roundedThird"></div>
-            <div className="yearExperienceThird">
-              <span>2023</span>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
