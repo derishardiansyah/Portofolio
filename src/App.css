@@ -1,42 +1,151 @@
+html,
+body,
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+.container {
   padding: 2rem;
+}
+
+.containerNavbar {
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 15px;
+  text-transform: uppercase;
+  background: transparent;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  letter-spacing: 2px;
+}
+
+.navbarLeft {
+  color: #69b3a2;
+  width: 40%;
+  margin-left: 120px;
+}
+
+.home {
+  cursor: pointer;
+}
+
+.navbarRight {
+  width: 60%;
+  margin-left: 60px;
+}
+
+.navbarRight ul {
+  list-style: none;
+  display: flex;
+}
+
+.navbarRight ul li {
+  margin-right: 90px;
+  color: black;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+.navbarRight ul li:hover {
+  color: #69b3a2;
+}
+
+.list {
+  display: flex;
+  position: relative;
+}
+
+.list::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: #69b3a2;
+  bottom: -15px;
+  transform: scale(0, 1);
+  position: absolute;
+}
+.list:hover::after {
+  transform: scale(1, 1);
+}
+
+/* content */
+.containerContent {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  max-width: 600px;
+  padding: 2em 3em;
+}
+
+.nameStyle {
+  font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 35px;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 1.75;
+}
+
+.line {
+  width: 90px;
+  height: 1px;
+  border: none;
+  background-color: #333;
+  margin-top: 50px;
+}
+
+.listButton {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+  margin-right: 30px;
+}
+
+.listButton li a {
+  font-size: 20px;
+  line-height: 40px;
+  display: block;
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s;
+  color: white;
+  border-radius: 100%;
+  outline: none;
+  background-color: #212529;
+  line-height: 40px;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.listButton li a:hover {
+  background-color: orange;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.listSocial {
+  margin-right: 0.5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+u {
+  padding-bottom: 3px;
+  text-decoration: none;
+  border-bottom: 1px solid #000;
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.descriptionProfile {
+  text-align: center;
+  margin-top: 40px;
 }
