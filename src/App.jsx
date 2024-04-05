@@ -6,6 +6,7 @@ import imgProfile from "./assets/img.png";
 const App = () => {
   const [isIntroduceActive, setIsIntroduceActive] = useState(false);
   const [isExperienceActive, setIsExperienceActive] = useState(false);
+  const [isPortfolioActive, setIsPortfolioActive] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,6 +20,12 @@ const App = () => {
       if (experienceSection) {
         const top = experienceSection.getBoundingClientRect().top;
         setIsExperienceActive(top >= 0 && top < window.innerHeight);
+      }
+
+      const portfolioSection = document.getElementById("portfolio");
+      if (portfolioSection) {
+        const top = portfolioSection.getBoundingClientRect().top;
+        setIsPortfolioActive(top >= 0 && top < window.innerHeight);
       }
     };
 
@@ -51,6 +58,12 @@ const App = () => {
     const homeSection = document.getElementById("home");
     if (homeSection) {
       homeSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  const handleScrollToPortfolio = () => {
+    const portfolioSection = document.getElementById("portfolio");
+    if (portfolioSection) {
+      portfolioSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -100,7 +113,12 @@ const App = () => {
             >
               Experiences
             </li>
-            <li className="list">Portfolio</li>
+            <li
+              className={`list ${isPortfolioActive ? "active" : ""}`}
+              onClick={() => handleScrollToPortfolio()}
+            >
+              Portfolio
+            </li>
             <li className="list">Contact</li>
           </ul>
         </div>
@@ -193,7 +211,7 @@ const App = () => {
             </div>
           </div>
         </div>
-        <div className="experience">
+        <div className="experience" id="experience">
           {experiences.map((exp, index) => (
             <div className="experienceList" key={index}>
               <div className="nameExperience">
@@ -209,6 +227,48 @@ const App = () => {
               </div>
             </div>
           ))}
+        </div>
+        <div className="portfolio" id="portfolio">
+          <div className="namePortfolio">
+            <h1>Portfolio</h1>
+          </div>
+          <span className="descPortfolio">
+            A glimpse of the projects I've worked on
+          </span>
+          <div className="menuPortfolio">
+            <a
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              className="portfolioButton"
+            >
+              Show All
+            </a>
+            <a
+              href=""
+              target="_blank"
+              rel="noopener noreferrer"
+              className="portfolioButton"
+            >
+              Data Mining
+            </a>
+            <a
+              href="https://twitter.com/drshardiansyahh"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="portfolioButton"
+            >
+              Data Science
+            </a>
+            <a
+              href="https://www.facebook.com/derishardiansyah1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="portfolioButton"
+            >
+              Website
+            </a>
+          </div>
         </div>
       </div>
     </div>
