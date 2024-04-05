@@ -5,6 +5,7 @@ import imgProfile from "./assets/img.png";
 
 const App = () => {
   const [isIntroduceActive, setIsIntroduceActive] = useState(false);
+  const [isExperienceActive, setIsExperienceActive] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,6 +14,12 @@ const App = () => {
         const top = introduceSection.getBoundingClientRect().top;
         setIsIntroduceActive(top >= 0 && top < window.innerHeight);
       }
+
+      const experienceSection = document.getElementById("experience");
+      if (experienceSection) {
+        const top = experienceSection.getBoundingClientRect().top;
+        setIsExperienceActive(top >= 0 && top < window.innerHeight);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -20,6 +27,7 @@ const App = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   const handleScrollIntroduction = () => {
     const introduction = document.getElementById("introduce");
     if (introduction) {
@@ -27,12 +35,41 @@ const App = () => {
     }
   };
 
+  const handleScrollToExperience = () => {
+    const experienceSection = document.getElementById("experience");
+    if (experienceSection) {
+      experienceSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   const handleScrollToIntroduction = () => {
     const introduceSection = document.getElementById("introduce");
     if (introduceSection) {
       introduceSection.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  const experiences = [
+    {
+      year: "2017",
+      department: "Network Engineer",
+      company: "PT. Permata Sejahtera Buana",
+    },
+    {
+      year: "2020",
+      department: "Software Developer",
+      company: "Kemendikbud",
+    },
+    {
+      year: "2021",
+      department: "Web Developer",
+      company: "Direktorat PKK (Ditjen KSDAE - KemenLHK)",
+    },
+    {
+      year: "2023",
+      department: "Full Stack Developer Trainee",
+      company: "PT. Phincon",
+    },
+  ];
   return (
     <div className="container">
       {/* Navbar */}
@@ -48,7 +85,12 @@ const App = () => {
             >
               Introduce
             </li>
-            <li className="list">Services</li>
+            <li
+              className={`list ${isExperienceActive ? "active" : ""}`}
+              onClick={() => handleScrollToExperience()}
+            >
+              Experience
+            </li>
             <li className="list">Portfolio</li>
             <li className="list">Contact</li>
           </ul>
@@ -139,6 +181,47 @@ const App = () => {
               >
                 Facebook
               </a>
+            </div>
+          </div>
+        </div>
+        <div className="experience" id="experience">
+          <div className="experienceList">
+            <div className="nameExperience">
+              <span>Network Engineer</span>
+            </div>
+            <hr className="lineExperience" />
+            <div className="nameExperience">
+              <span>PT. Permata Sejahtera Buana</span>
+            </div>
+            <div className="rounded"></div>
+            <div className="yearExperience">
+              <span>2017</span>
+            </div>
+          </div>
+          <div className="experienceList">
+            <div className="nameExperience">
+              <span>Web Developer</span>
+            </div>
+            <hr className="lineExperience" />
+            <div className="nameExperience">
+              <span>Direktorat PKK, Ditjen KSDAE - KemenLHK</span>
+            </div>
+            <div className="roundedSecond"></div>
+            <div className="yearExperienceSecond">
+              <span>2021</span>
+            </div>
+          </div>
+          <div className="experienceList">
+            <div className="nameExperience">
+              <span>Full Stack Developer</span>
+            </div>
+            <hr className="lineExperience" />
+            <div className="nameExperience">
+              <span>PT. Phincon</span>
+            </div>
+            <div className="roundedThird"></div>
+            <div className="yearExperienceThird">
+              <span>2023</span>
             </div>
           </div>
         </div>
