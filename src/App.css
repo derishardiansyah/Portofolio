@@ -88,6 +88,7 @@ body {
   transform: translate(50%, -50%);
   max-width: 600px;
   padding: 2em 3em;
+  margin-top: 70px;
 }
 
 .nameStyle {
@@ -148,4 +149,24 @@ u {
 .descriptionProfile {
   text-align: center;
   margin-top: 40px;
+}
+
+.arrowDescription {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  animation: moveUpDown 1s infinite alternate;
+}
+
+.fa-arrow-circle-down {
+  cursor: pointer;
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
 }

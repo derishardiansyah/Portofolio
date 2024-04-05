@@ -1,3 +1,4 @@
+import "@fortawesome/fontawesome-free/css/all.css";
 import "./App.css";
 
 const App = () => {
@@ -25,17 +26,17 @@ const App = () => {
         <ul className="listButton">
           <li className="listSocial">
             <a href="https://www.linkedin.com/in/deris-hardiansyah-ismail-37b27b25a/">
-              <i className="fa fa-linkedin" aria-hidden="true"></i>
+              <i className="fa-brands fa-linkedin-in"></i>
             </a>
           </li>
           <li className="listSocial">
             <a href="https://github.com/derishardiansyah">
-              <i className="fa fa-github" aria-hidden="true"></i>
+              <i className="fa-brands fa-github"></i>
             </a>
           </li>
           <li className="listSocial">
             <a href="mailto:derishardiansyah27@gmail.com">
-              <i className="fa fa-envelope" aria-hidden="true"></i>
+              <i className="fa-solid fa-envelope"></i>
             </a>
           </li>
         </ul>
@@ -44,6 +45,9 @@ const App = () => {
             Welcome to Deris Hardiansyah Ismail <u> homepage</u>.
           </p>
           <p>I`m a data practitioners and developer website </p>
+        </div>
+        <div className="arrowDescription">
+          <i className="fa fa-arrow-circle-down fa-3x" aria-hidden="true"></i>
         </div>
       </div>
     </div>
