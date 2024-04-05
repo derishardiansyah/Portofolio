@@ -47,6 +47,12 @@ const App = () => {
       introduceSection.scrollIntoView({ behavior: "smooth" });
     }
   };
+  const handleScrollToHome = () => {
+    const homeSection = document.getElementById("home");
+    if (homeSection) {
+      homeSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   const experiences = [
     {
@@ -75,7 +81,9 @@ const App = () => {
       {/* Navbar */}
       <div className="containerNavbar">
         <div className="navbarLeft">
-          <a className="home">Home</a>
+          <a className="home" onClick={() => handleScrollToHome()}>
+            Home
+          </a>
         </div>
         <div className="navbarRight">
           <ul>
@@ -89,7 +97,7 @@ const App = () => {
               className={`list ${isExperienceActive ? "active" : ""}`}
               onClick={() => handleScrollToExperience()}
             >
-              Experience
+              Experiences
             </li>
             <li className="list">Portfolio</li>
             <li className="list">Contact</li>
@@ -98,7 +106,7 @@ const App = () => {
       </div>
 
       {/* Content */}
-      <div className="contentWrapper">
+      <div className="contentWrapper" id="home">
         <div className="containerContent">
           <a className="nameStyle">Deris Hardiansyah Ismail</a>
           <hr className="line" />
