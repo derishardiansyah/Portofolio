@@ -2,11 +2,32 @@ import { useState, useEffect } from "react";
 import "@fortawesome/fontawesome-free/css/all.css";
 import "./App.css";
 import imgProfile from "./assets/img.png";
+import premierLeague from "./assets/premier.png";
+import saham from "./assets/saham.png";
+import imgIcon from "../public/astronot.svg";
+import PortfolioCard from "./component/PortfolioCard";
 
 const App = () => {
   const [isIntroduceActive, setIsIntroduceActive] = useState(false);
   const [isExperienceActive, setIsExperienceActive] = useState(false);
   const [isPortfolioActive, setIsPortfolioActive] = useState(false);
+  const [isContactActive, setIsContactActive] = useState(false);
+  const [portfolioItems, setPortfolioItems] = useState([
+    {
+      desc: "A premier league football club website that presents several features including: club information and standings table",
+      img: premierLeague,
+      link: "https://github.com/derishardiansyah/Data-Science",
+      class: "developer",
+      nameProyek: "Website Premier League 2023 - 2024",
+    },
+    {
+      desc: "Netflix stock price visualisation using long short term memory algorithm",
+      img: saham,
+      link: "https://github.com/derishardiansyah/Data-Science",
+      class: "dataScience",
+      nameProyek: "Forecast Saham",
+    },
+  ]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +47,12 @@ const App = () => {
       if (portfolioSection) {
         const top = portfolioSection.getBoundingClientRect().top;
         setIsPortfolioActive(top >= 0 && top < window.innerHeight);
+      }
+
+      const contactSection = document.getElementById("contact");
+      if (contactSection) {
+        const top = contactSection.getBoundingClientRect().top;
+        setIsContactActive(top >= 0 && top < window.innerHeight);
       }
     };
 
@@ -64,6 +91,12 @@ const App = () => {
     const portfolioSection = document.getElementById("portfolio");
     if (portfolioSection) {
       portfolioSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  const handleScrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -119,7 +152,12 @@ const App = () => {
             >
               Portfolio
             </li>
-            <li className="list">Contact</li>
+            <li
+              className={`list ${isContactActive ? "active" : ""}`}
+              onClick={() => handleScrollToContact()}
+            >
+              Contact
+            </li>
           </ul>
         </div>
       </div>
@@ -237,7 +275,6 @@ const App = () => {
           </span>
           <div className="menuPortfolio">
             <a
-              href=""
               target="_blank"
               rel="noopener noreferrer"
               className="portfolioButton"
@@ -245,7 +282,6 @@ const App = () => {
               Show All
             </a>
             <a
-              href=""
               target="_blank"
               rel="noopener noreferrer"
               className="portfolioButton"
@@ -253,7 +289,6 @@ const App = () => {
               Data Mining
             </a>
             <a
-              href="https://twitter.com/drshardiansyahh"
               target="_blank"
               rel="noopener noreferrer"
               className="portfolioButton"
@@ -261,13 +296,102 @@ const App = () => {
               Data Science
             </a>
             <a
-              href="https://www.facebook.com/derishardiansyah1"
               target="_blank"
               rel="noopener noreferrer"
               className="portfolioButton"
             >
               Website
             </a>
+          </div>
+          <div className="proyek">
+            <div className="cardProyek">
+              {portfolioItems.map((item, index) => (
+                <PortfolioCard
+                  key={index}
+                  img={item.img}
+                  alt={item.nameProyek}
+                  desc={item.desc}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="contact" id="contact">
+          <div className="nameContact">
+            <h1>Contact</h1>
+          </div>
+          <div className="descContact">
+            <span>
+              Feel free to contact me with any questions. If you want to follow
+              my work, contact me on{" "}
+              <a href="https://www.linkedin.com/in/deris-hardiansyah-ismail-37b27b25a/">
+                LinkedIn
+              </a>
+              . Otherwise, send me a message via my social media.
+            </span>
+          </div>
+          <div className="containerSocialMediaContact">
+            <div className="socialMedia">
+              <a
+                href="https://www.linkedin.com/in/deris-hardiansyah-ismail-37b27b25a/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="socialButton"
+              >
+                LinkedIn
+              </a>
+              <a
+                href="https://www.instagram.com/derishardiansyah/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="socialButton"
+              >
+                Instagram
+              </a>
+              <a
+                href="https://twitter.com/drshardiansyahh"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="socialButton"
+              >
+                Twitter
+              </a>
+              <a
+                href="https://www.facebook.com/derishardiansyah1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="socialButton"
+              >
+                Facebook
+              </a>
+              <a
+                href="https://github.com/derishardiansyah"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="socialButton"
+              >
+                Github
+              </a>
+              <a
+                href="mailto:derishardiansyah27@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="socialButton"
+              >
+                Mail
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className="footer">
+          <div className="nameFooter">
+            <span>Copyright © 2024 Deris Hardiansyah Ismail</span>
+          </div>
+          <div className="footerImg">
+            <img src={imgIcon} alt="Astronot" />
+          </div>
+          <div className="termsFooter">
+            <a>Privacy Policy</a> <a>Terms of Use</a>
           </div>
         </div>
       </div>
