@@ -235,7 +235,6 @@ u {
   display: flex;
   flex-direction: row;
   padding: 60px;
-  margin-top: 90px;
   text-align: center;
   width: 100%;
   line-height: 20px;
@@ -252,7 +251,7 @@ u {
 .rounded {
   position: absolute;
   left: 38%;
-  top: 195%;
+  top: 183%;
   width: 12px;
   height: 12px;
   border-radius: 100%;
@@ -262,7 +261,7 @@ u {
 .yearExperience {
   position: absolute;
   left: 37.5%;
-  top: 197.5%;
+  top: 185%;
   width: 15px;
   color: black 2px solid;
 }
@@ -270,7 +269,7 @@ u {
 .roundedSecond {
   position: absolute;
   left: 64%;
-  top: 195%;
+  top: 183%;
   width: 12px;
   height: 12px;
   border-radius: 100%;
@@ -280,7 +279,7 @@ u {
 .yearExperienceSecond {
   position: absolute;
   left: 63.5%;
-  top: 197.5%;
+  top: 185%;
   width: 15px;
   color: black 2px solid;
 }
@@ -288,7 +287,7 @@ u {
 .roundedThird {
   position: absolute;
   left: 79%;
-  top: 195%;
+  top: 183%;
   width: 12px;
   height: 12px;
   border-radius: 100%;
@@ -298,7 +297,7 @@ u {
 .yearExperienceThird {
   position: absolute;
   left: 78.5%;
-  top: 197.5%;
+  top: 185%;
   width: 15px;
   color: black 2px solid;
 }

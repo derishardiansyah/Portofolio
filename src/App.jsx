@@ -4,7 +4,7 @@ import "./App.css";
 import imgProfile from "./assets/img.png";
 import premierLeague from "./assets/premier.png";
 import saham from "./assets/saham.png";
-import imgIcon from "../public/astronot.svg";
+import imgIcon from "/public/astronot.svg";
 import PortfolioCard from "./component/PortfolioCard";
 
 const App = () => {
