@@ -331,6 +331,7 @@ u {
   column-gap: 20px;
   margin-top: 60px;
   justify-content: center;
+  cursor: pointer;
 }
 
 .portfolioButton {
@@ -348,10 +349,9 @@ u {
   color: white;
 }
 
-.portfolioButton:active {
-  background-color: white;
-  color: #69b3a2;
-  border-color: #69b3a2;
+.portfolioButton.active {
+  background-color: #69b3a2;
+  color: white;
 }
 
 .Project {

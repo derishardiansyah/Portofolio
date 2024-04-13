@@ -15,6 +15,7 @@ const App = () => {
   const [isPortfolioActive, setIsPortfolioActive] = useState(false);
   const [isContactActive, setIsContactActive] = useState(false);
   const [modalIndex, setModalIndex] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState("Show All");
   const [portfolioItems, setPortfolioItems] = useState([
     {
       desc: "A premier league football club website that presents several features including: club information and standings table",
@@ -41,6 +42,15 @@ const App = () => {
     setModalIndex(null);
     document.body.style.overflow = "auto";
   };
+
+  const handleCategorySelect = (category) => {
+    setSelectedCategory(category);
+  };
+
+  const filteredPortfolioItems =
+    selectedCategory === "Show All"
+      ? portfolioItems
+      : portfolioItems.filter((item) => item.class === selectedCategory);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -298,9 +308,10 @@ const App = () => {
           </span>
           <div className="menuPortfolio">
             <a
-              target="_blank"
-              rel="noopener noreferrer"
-              className="portfolioButton"
+              className={`portfolioButton ${
+                selectedCategory === "Show All" ? "active" : ""
+              }`}
+              onClick={() => handleCategorySelect("Show All")}
             >
               Show All
             </a>
@@ -312,23 +323,25 @@ const App = () => {
               Data Mining
             </a>
             <a
-              target="_blank"
-              rel="noopener noreferrer"
-              className="portfolioButton"
+              className={`portfolioButton ${
+                selectedCategory === "dataScience" ? "active" : ""
+              }`}
+              onClick={() => handleCategorySelect("dataScience")}
             >
               Data Science
             </a>
             <a
-              target="_blank"
-              rel="noopener noreferrer"
-              className="portfolioButton"
+              className={`portfolioButton ${
+                selectedCategory === "developer" ? "active" : ""
+              }`}
+              onClick={() => handleCategorySelect("developer")}
             >
               Website
             </a>
           </div>
           <div className="Project">
             <div className="cardProject">
-              {portfolioItems.map((item, index) => (
+              {filteredPortfolioItems.map((item, index) => (
                 <PortfolioCard
                   key={index}
                   img={item.img}
@@ -351,8 +364,8 @@ const App = () => {
                       />
                       <img
                         src={modalClose}
-                        width="55px"
-                        height="55px"
+                        width="35px"
+                        height="35px"
                         onClick={handleModalClose}
                         className="modalClose"
                       />
