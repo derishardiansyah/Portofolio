@@ -5,6 +5,7 @@ import imgProfile from "./assets/img.png";
 import premierLeague from "./assets/premier.png";
 import saham from "./assets/saham.png";
 import imgIcon from "/public/astronot.svg";
+import modalClose from "./assets/close.png";
 import PortfolioCard from "./component/PortfolioCard";
 
 const App = () => {
@@ -12,22 +13,33 @@ const App = () => {
   const [isExperienceActive, setIsExperienceActive] = useState(false);
   const [isPortfolioActive, setIsPortfolioActive] = useState(false);
   const [isContactActive, setIsContactActive] = useState(false);
+  const [modalIndex, setModalIndex] = useState(null);
   const [portfolioItems, setPortfolioItems] = useState([
     {
       desc: "A premier league football club website that presents several features including: club information and standings table",
       img: premierLeague,
       link: "https://github.com/derishardiansyah/Data-Science",
       class: "developer",
-      nameProyek: "Website Premier League",
+      nameProyek: "Club Information Portal and Standings",
     },
     {
       desc: "Netflix stock price visualisation using long short term memory algorithm",
       img: saham,
       link: "https://github.com/derishardiansyah/Data-Science",
       class: "dataScience",
-      nameProyek: "Forecast Saham",
+      nameProyek: "Stock Forecast",
     },
   ]);
+
+  const handleModalOpen = (index) => {
+    setModalIndex(index);
+    document.body.style.overflow = "hidden";
+  };
+
+  const handleModalClose = () => {
+    setModalIndex(null);
+    document.body.style.overflow = "auto";
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -123,6 +135,7 @@ const App = () => {
       classYear: "yearExperienceThird",
     },
   ];
+
   return (
     <div className="container">
       {/* Navbar */}
@@ -311,9 +324,45 @@ const App = () => {
                   img={item.img}
                   alt={item.nameProyek}
                   desc={item.desc}
+                  onClick={() => handleModalOpen(index)}
                 />
               ))}
             </div>
+            {modalIndex !== null && (
+              <div className="modalOverlay">
+                <div className="modalBackground">
+                  <div className="containerModal">
+                    <div className="modalHeader">
+                      <img
+                        src={portfolioItems[modalIndex].img}
+                        width="250px"
+                        height="210px"
+                        className="modalImg"
+                      />
+                      <img
+                        src={modalClose}
+                        width="55px"
+                        height="55px"
+                        onClick={handleModalClose}
+                        className="modalClose"
+                      />
+                    </div>
+                    <div className="contentHeader">
+                      <p className="headerProyek">
+                        {portfolioItems[modalIndex].nameProyek}
+                      </p>
+                      <p className="descProyek">
+                        {portfolioItems[modalIndex].desc}
+                      </p>
+                    </div>
+                    <div className="modalBody">
+                      <div className="descBody">Description</div>
+                      <hr className="lineDescBody" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
         <div className="contact" id="contact">
