@@ -48,10 +48,11 @@ const PortfolioCard = ({ img, alt, desc, onClick }) => {
                 right: 20,
                 zIndex: 999,
                 color: "white",
+                padding: "10px",
               }}
             >
-              <h2>{alt}</h2>
-              <p>{desc}</p>
+              <h2 style={{ marginTop: "60px" }}>{alt}</h2>
+              <p style={{ marginTop: "50px", fontSize: "16px" }}>{desc}</p>
             </div>
           )}
         </div>

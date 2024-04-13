@@ -18,7 +18,7 @@ const App = () => {
       img: premierLeague,
       link: "https://github.com/derishardiansyah/Data-Science",
       class: "developer",
-      nameProyek: "Website Premier League 2023 - 2024",
+      nameProyek: "Website Premier League",
     },
     {
       desc: "Netflix stock price visualisation using long short term memory algorithm",
