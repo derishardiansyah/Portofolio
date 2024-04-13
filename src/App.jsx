@@ -7,6 +7,7 @@ import saham from "./assets/saham.png";
 import imgIcon from "/public/astronot.svg";
 import modalClose from "./assets/close.png";
 import PortfolioCard from "./component/PortfolioCard";
+import cv from "./assets/file/Resume.pdf";
 
 const App = () => {
   const [isIntroduceActive, setIsIntroduceActive] = useState(false);
@@ -20,14 +21,14 @@ const App = () => {
       img: premierLeague,
       link: "https://github.com/derishardiansyah/Data-Science",
       class: "developer",
-      nameProyek: "Club Information Portal and Standings",
+      nameProject: "Club Information Portal and Standings",
     },
     {
       desc: "Netflix stock price visualisation using long short term memory algorithm",
       img: saham,
       link: "https://github.com/derishardiansyah/Data-Science",
       class: "dataScience",
-      nameProyek: "Stock Forecast",
+      nameProject: "Stock Forecast",
     },
   ]);
 
@@ -225,7 +226,7 @@ const App = () => {
             <p>Hi, I am Deris Hardiansyah Ismail.</p>
             <p>
               I am a recent graduate with programming and database management
-              experience, I have worked on diverse projects. My love for
+              experience, I have worked on diverse Projects. My love for
               technology and continuous learning drives my career. I am
               proficient in <b>HTML</b>, <b>CSS</b>, <b>JavaScript</b>,{" "}
               <b>Python</b>, <b>MySQL</b>.
@@ -259,6 +260,15 @@ const App = () => {
               >
                 Facebook
               </a>
+              <a
+                href={cv}
+                download
+                target="_blank"
+                rel="noopener noreferrer"
+                className="socialButton"
+              >
+                Resume
+              </a>
             </div>
           </div>
         </div>
@@ -284,7 +294,7 @@ const App = () => {
             <h1>Portfolio</h1>
           </div>
           <span className="descPortfolio">
-            A glimpse of the projects I've worked on
+            A glimpse of the Projects I've worked on
           </span>
           <div className="menuPortfolio">
             <a
@@ -316,13 +326,13 @@ const App = () => {
               Website
             </a>
           </div>
-          <div className="proyek">
-            <div className="cardProyek">
+          <div className="Project">
+            <div className="cardProject">
               {portfolioItems.map((item, index) => (
                 <PortfolioCard
                   key={index}
                   img={item.img}
-                  alt={item.nameProyek}
+                  alt={item.nameProject}
                   desc={item.desc}
                   onClick={() => handleModalOpen(index)}
                 />
@@ -348,10 +358,10 @@ const App = () => {
                       />
                     </div>
                     <div className="contentHeader">
-                      <p className="headerProyek">
-                        {portfolioItems[modalIndex].nameProyek}
+                      <p className="headerProject">
+                        {portfolioItems[modalIndex].nameProject}
                       </p>
-                      <p className="descProyek">
+                      <p className="descProject">
                         {portfolioItems[modalIndex].desc}
                       </p>
                     </div>

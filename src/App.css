@@ -354,11 +354,11 @@ u {
   border-color: #69b3a2;
 }
 
-.proyek {
+.Project {
   padding: 70px 120px 50px 160px;
 }
 
-.cardProyek {
+.cardProject {
   display: flex;
   flex-direction: row;
   gap: 40px;
@@ -417,11 +417,11 @@ u {
   padding: 20px;
 }
 
-.headerProyek {
+.headerProject {
   font-size: 22px;
 }
 
-.descProyek {
+.descProject {
   font-size: 18px;
   font-style: italic;
   color: gray;
