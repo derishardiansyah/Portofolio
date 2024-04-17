@@ -16,7 +16,11 @@ import players1 from "./assets/players1.png";
 import players2 from "./assets/players2.png";
 import players3 from "./assets/players3.png";
 import players4 from "./assets/players4.png";
-import imgIcon from "/public/astronot.svg";
+import compareStockTraining from "./assets/CompareStockTraining.png";
+import compareStockTesting from "./assets/CompareStockTesting.png";
+import result from "./assets/result.png";
+import imgDeployment from "./assets/deployment.png";
+import imgIcon from "/astronot.svg";
 import modalClose from "./assets/close.png";
 import PortfolioCard from "./component/PortfolioCard";
 import cv from "./assets/file/Resume.pdf";
@@ -473,7 +477,83 @@ const App = () => {
                           <img src={players4} alt="Players Club" />
                         </div>
                       )}
-                      {modalIndex === 1 && <p>item</p>}
+                      {modalIndex === 1 && (
+                        <div className="headerDescBody">
+                          <div className="headerText">Parameters</div>
+                          <hr />
+                          <ol>
+                            <li>Pola Time Series : 1, 2, 3, 4, 5</li>
+                            <li>Max Epoch : 25, 50, 100, 500, 1000</li>
+                            <li>Neuron Hidden : 5, 10, 15, 25, 30</li>
+                            <li>Batch Size : 4, 16, 32, 64, 126</li>
+                          </ol>
+                          <div className="headerText">Comparison Graph</div>
+                          <hr />
+                          <p>
+                            It can be seen in the graph for training data, where
+                            the predicted data values move in the same direction
+                            or follow the actual data, indicating that the
+                            resulting values are quite good.
+                          </p>
+                          <img
+                            src={compareStockTraining}
+                            alt="Compare Stock Training"
+                          />
+                          <p>
+                            It can be seen in the graph for data testing, where
+                            the predicted data values move in the same direction
+                            or follow the actual data, but in some periods there
+                            are very small differences so that these differences
+                            can be calculated using the evaluation model used.
+                          </p>
+                          <img
+                            src={compareStockTesting}
+                            alt="Compare Stock Testing"
+                          />
+                          <div className="headerText">Forecasting</div>
+                          <hr />
+                          <p>
+                            The results of the forecast for the next 90 days
+                            explain that Netflix shares will experience a pretty
+                            good increase seen from a straight line that points
+                            up. This is a positive sign for Netflix to prepare
+                            concrete steps to prepare new strategies to attract
+                            customers.
+                          </p>
+                          <img src={result} alt="Result Forecasting" />
+                          <div className="headerText">Deployment</div>
+                          <hr />
+                          <p>
+                            This web application is deployed using Streamlit, a
+                            powerful framework for building and sharing
+                            data-centric web apps. Streamlit simplifies the
+                            process of creating interactive web applications
+                            from Python scripts. By leveraging Streamlit, we've
+                            crafted a user-friendly interface that allows
+                            seamless exploration of our project's insights and
+                            functionalities. There are several tools that can be
+                            changed in appearance, including: Train and Test
+                            values for RMSE and MAPE. Stock code and date period
+                            used.
+                          </p>
+                          <img src={imgDeployment} alt="Deployment" />
+
+                          <h3>URL Deployment Link</h3>
+                          <p>
+                            You can access the deployed website through the
+                            following URL:{" "}
+                            <a href="https://stock-forecasting.streamlit.app/">
+                              https://stock-forecasting.streamlit.app/
+                            </a>
+                          </p>
+                        </div>
+                      )}
+                      {modalIndex === 2 && (
+                        <div className="headerDescBody">
+                          <div className="headerText">Feature</div>
+                          <hr />
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
