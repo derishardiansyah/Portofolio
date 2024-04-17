@@ -32,7 +32,7 @@ const PortfolioCard = ({ img, alt, desc, onClick }) => {
           <CardMedia
             component="img"
             height="auto"
-            width="100%"
+            maxWidth="100%"
             image={img}
             alt={alt}
             sx={{

@@ -4,6 +4,18 @@ import "./App.css";
 import imgProfile from "./assets/img.png";
 import premierLeague from "./assets/premier.png";
 import saham from "./assets/saham.png";
+import table from "./assets/table.png";
+import sf1 from "./assets/sf1.png";
+import sf2 from "./assets/sf2.png";
+import sf3 from "./assets/sf3.png";
+import sf4 from "./assets/sf4.png";
+import clubDetail from "./assets/clubDetail.png";
+import news1 from "./assets/news1.png";
+import news2 from "./assets/news2.png";
+import players1 from "./assets/players1.png";
+import players2 from "./assets/players2.png";
+import players3 from "./assets/players3.png";
+import players4 from "./assets/players4.png";
 import imgIcon from "/public/astronot.svg";
 import modalClose from "./assets/close.png";
 import PortfolioCard from "./component/PortfolioCard";
@@ -23,6 +35,8 @@ const App = () => {
       link: "https://github.com/derishardiansyah/Data-Science",
       class: "developer",
       nameProject: "Club Information Portal and Standings",
+      descProject:
+        "This project is a web application that provides information about premier league football clubs and their standings. The application is built using HTML, CSS, and JavaScript, and it is deployed on a web server using Node.js and Express.js.",
     },
     {
       desc: "Netflix stock price visualisation using long short term memory algorithm",
@@ -351,36 +365,115 @@ const App = () => {
                 />
               ))}
             </div>
+
             {modalIndex !== null && (
               <div className="modalOverlay">
                 <div className="modalBackground">
                   <div className="containerModal">
-                    <div className="modalHeader">
-                      <img
-                        src={portfolioItems[modalIndex].img}
-                        width="250px"
-                        height="210px"
-                        className="modalImg"
-                      />
+                    <div className="modalClose">
                       <img
                         src={modalClose}
-                        width="35px"
-                        height="35px"
                         onClick={handleModalClose}
-                        className="modalClose"
+                        className="styleClose"
                       />
+                    </div>
+                    <div className="modalHeader">
+                      <img src={portfolioItems[modalIndex].img} />
                     </div>
                     <div className="contentHeader">
                       <p className="headerProject">
                         {portfolioItems[modalIndex].nameProject}
                       </p>
-                      <p className="descProject">
-                        {portfolioItems[modalIndex].desc}
-                      </p>
                     </div>
                     <div className="modalBody">
-                      <div className="descBody">Description</div>
-                      <hr className="lineDescBody" />
+                      {modalIndex === 0 && (
+                        <div className="headerDescBody">
+                          <div className="headerText">Feature</div>
+                          <hr />
+                          <ol>
+                            <li>Search Function</li>
+                            <li>Club Detail</li>
+                            <li>Standings</li>
+                            <li>News</li>
+                            <li>Players</li>
+                          </ol>
+                          <div className="headerText">Page Home</div>
+                          <hr />
+                          <p>
+                            On the main page there are several features for
+                            guests and users. Guests can only view club details
+                            and the standings table. To view news and players,
+                            you must first register and select your favorite
+                            team. Users can view all available features. Only
+                            premier league clubs competing in 2023 - 2024 are
+                            listed here.
+                          </p>
+                          <img src={premierLeague} alt="Home Premier League" />
+                          <p>
+                            The standings table is done in real time by calling
+                            the API from a website. But each day is limited to
+                            100 times. Specifically in this table can see the
+                            results of the match in the previous year's
+                            competition.
+                          </p>
+                          <img src={table} alt="Table Premier League" />
+                          <div className="headerText">Search Function</div>
+                          <hr />
+                          <p>
+                            The use of the search function can be done based on
+                            : Team Name, Year of Establishment, Stadium, City
+                            according to the description on the club detail
+                            page.
+                          </p>
+                          <img src={sf1} alt="Search Function with club name" />
+                          <img
+                            src={sf2}
+                            alt="Search Function with founded club"
+                          />
+                          <img src={sf3} alt="Search Function with city club" />
+                          <img
+                            src={sf4}
+                            alt="Search Function with founded club"
+                          />
+                          <div className="headerText">Club Detail</div>
+                          <hr />
+                          <p>
+                            On this page you can see the club details as a
+                            whole. Starting from the name, year of
+                            establishment, stadium and city of the club. To see
+                            it, go to the main page and click on the club you
+                            want to see.
+                          </p>
+                          <img src={clubDetail} alt="Club Detail" />
+                          <div className="headerText">News</div>
+                          <hr />
+                          <p>
+                            To view the news page. Users must register first and
+                            verify via email. If the user only registers but
+                            does not verify, the account cannot be used to view
+                            the news. The news page will match the club selected
+                            during registration.
+                          </p>
+                          <img src={news1} alt="News Club" />
+                          <img src={news2} alt="News Club" />
+                          <div className="headerText">Players</div>
+                          <hr />
+                          <p>
+                            To view the players page. Users must register first
+                            and verify via email. If the user only registers but
+                            does not verify, the account cannot be used to view
+                            players. The player page will correspond to the club
+                            selected during registration. Starting from the
+                            position of goalkeeper, defender, midfielder and
+                            forward.
+                          </p>
+                          <img src={players1} alt="Players Club" />
+                          <img src={players2} alt="Players Club" />
+                          <img src={players3} alt="Players Club" />
+                          <img src={players4} alt="Players Club" />
+                        </div>
+                      )}
+                      {modalIndex === 1 && <p>item</p>}
                     </div>
                   </div>
                 </div>
