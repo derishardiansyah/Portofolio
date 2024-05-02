@@ -195,6 +195,11 @@ u {
   margin-left: 160px;
 }
 
+.imageProfile img {
+  width: 300px;
+  height: 300px;
+}
+
 .descProfile {
   margin-left: 100px;
   margin-top: 20px;
@@ -449,6 +454,12 @@ u {
   text-align: left;
 }
 
+.linkSource {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
 .headerText {
   font-size: 22px;
   margin-top: 15px;
@@ -482,7 +493,6 @@ u {
   display: flex;
   flex-direction: column;
   text-align: center;
-  padding: 30px;
 }
 
 .nameContact {
@@ -539,3 +549,58 @@ u {
 }
 
 /* Mobile */
+
+@media only screen and (max-width: 1200px) {
+  .navbarLeft {
+    font-size: 11px;
+    margin-left: 50px;
+    width: 30%;
+  }
+  .navbarRight {
+    font-size: 12px;
+    width: 70%;
+  }
+  .nameStyle {
+    font-size: 28px;
+  }
+  .imageProfile {
+    margin-left: 10px;
+  }
+  .imageProfile img {
+    width: 230px;
+    height: 230px;
+  }
+  .descProfile {
+    margin-left: 40px;
+    margin-top: 0;
+    font-size: 17px;
+  }
+  .rounded {
+    left: 33%;
+  }
+  .yearExperience {
+    left: 32.5%;
+  }
+  .roundedSecond {
+    left: 71%;
+  }
+  .yearExperienceSecond {
+    left: 70%;
+  }
+  .roundedThird {
+    left: 93%;
+  }
+  .yearExperienceThird {
+    left: 92%;
+  }
+  .descContact {
+    margin-left: 180px;
+    margin-right: 180px;
+  }
+  .footer {
+    column-gap: 200px;
+  }
+  .nameFooter {
+    margin-left: 50px;
+  }
+}

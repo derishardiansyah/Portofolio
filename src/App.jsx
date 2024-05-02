@@ -20,8 +20,8 @@ import compareStockTraining from "./assets/CompareStockTraining.png";
 import compareStockTesting from "./assets/CompareStockTesting.png";
 import result from "./assets/result.png";
 import imgDeployment from "./assets/deployment.png";
-import imgIcon from "/astronot.svg";
 import modalClose from "./assets/close.png";
+import imgIcon from "../public/astronot.svg";
 import PortfolioCard from "./component/PortfolioCard";
 import cv from "./assets/file/Resume.pdf";
 
@@ -104,41 +104,25 @@ const App = () => {
   }, []);
 
   const handleScrollIntroduction = () => {
-    const introduction = document.getElementById("introduce");
-    if (introduction) {
-      introduction.scrollIntoView({ behavior: "smooth" });
-    }
+    document.getElementById("introduce").scrollIntoView({ behavior: "smooth" });
   };
 
   const handleScrollToExperience = () => {
-    const experienceSection = document.getElementById("experience");
-    if (experienceSection) {
-      experienceSection.scrollIntoView({ behavior: "smooth" });
-    }
+    document
+      .getElementById("experience")
+      .scrollIntoView({ behavior: "smooth" });
   };
-  const handleScrollToIntroduction = () => {
-    const introduceSection = document.getElementById("introduce");
-    if (introduceSection) {
-      introduceSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+
   const handleScrollToHome = () => {
-    const homeSection = document.getElementById("home");
-    if (homeSection) {
-      homeSection.scrollIntoView({ behavior: "smooth" });
-    }
+    document.getElementById("home").scrollIntoView({ behavior: "smooth" });
   };
+
   const handleScrollToPortfolio = () => {
-    const portfolioSection = document.getElementById("portfolio");
-    if (portfolioSection) {
-      portfolioSection.scrollIntoView({ behavior: "smooth" });
-    }
+    document.getElementById("portfolio").scrollIntoView({ behavior: "smooth" });
   };
+
   const handleScrollToContact = () => {
-    const contactSection = document.getElementById("contact");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
-    }
+    document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
   };
 
   const experiences = [
@@ -168,9 +152,9 @@ const App = () => {
   return (
     <div className="container">
       {/* Navbar */}
-      <div className="containerNavbar">
+      <nav className="containerNavbar">
         <div className="navbarLeft">
-          <a className="home" onClick={() => handleScrollToHome()}>
+          <a className="home" onClick={handleScrollToHome}>
             Home
           </a>
         </div>
@@ -178,31 +162,31 @@ const App = () => {
           <ul>
             <li
               className={`list ${isIntroduceActive ? "active" : ""}`}
-              onClick={() => handleScrollIntroduction()}
+              onClick={handleScrollIntroduction}
             >
               Introduce
             </li>
             <li
               className={`list ${isExperienceActive ? "active" : ""}`}
-              onClick={() => handleScrollToExperience()}
+              onClick={handleScrollToExperience}
             >
               Experiences
             </li>
             <li
               className={`list ${isPortfolioActive ? "active" : ""}`}
-              onClick={() => handleScrollToPortfolio()}
+              onClick={handleScrollToPortfolio}
             >
               Portfolio
             </li>
             <li
               className={`list ${isContactActive ? "active" : ""}`}
-              onClick={() => handleScrollToContact()}
+              onClick={handleScrollToContact}
             >
               Contact
             </li>
           </ul>
         </div>
-      </div>
+      </nav>
 
       {/* Content */}
       <div className="contentWrapper" id="home">
@@ -211,41 +195,39 @@ const App = () => {
           <hr className="line" />
           <ul className="listButton">
             <li className="listSocial">
-              <a href="https://www.linkedin.com/in/deris-hardiansyah-ismail-37b27b25a/">
+              <a
+                href="https://www.linkedin.com/in/deris-hardiansyah-ismail-37b27b25a/"
+                target="_blank"
+              >
                 <i className="fa-brands fa-linkedin-in"></i>
               </a>
             </li>
             <li className="listSocial">
-              <a href="https://github.com/derishardiansyah">
+              <a href="https://github.com/derishardiansyah" target="_blank">
                 <i className="fa-brands fa-github"></i>
               </a>
             </li>
             <li className="listSocial">
-              <a href="mailto:derishardiansyah27@gmail.com">
+              <a href="mailto:derishardiansyah27@gmail.com" target="_blank">
                 <i className="fa-solid fa-envelope"></i>
               </a>
             </li>
           </ul>
           <div className="descriptionProfile">
             <p>
-              Welcome to Deris Hardiansyah Ismail <u> homepage</u>.
+              Welcome to Deris Hardiansyah Ismail <u>homepage</u>.
             </p>
-            <p>I am a data practitioners and developer website </p>
+            <p>I am a data practitioner and website developer.</p>
           </div>
-          <div
-            className="arrowDescription"
-            onClick={() => handleScrollToIntroduction()}
-          >
+          <div className="arrowDescription" onClick={handleScrollIntroduction}>
             <i className="fa fa-arrow-circle-down fa-3x" aria-hidden="true"></i>
           </div>
         </div>
 
-        <div className="containerIntroduce" id="introduce">
+        <section className="containerIntroduce" id="introduce">
           <div className="imageProfile">
             <img
               src={imgProfile}
-              width="300px"
-              height="300px"
               style={{ borderRadius: "50%" }}
               alt="MyProfile"
             />
@@ -254,10 +236,10 @@ const App = () => {
             <p>Hi, I am Deris Hardiansyah Ismail.</p>
             <p>
               I am a recent graduate with programming and database management
-              experience, I have worked on diverse Projects. My love for
+              experience. I have worked on diverse projects. My love for
               technology and continuous learning drives my career. I am
               proficient in <b>HTML</b>, <b>CSS</b>, <b>JavaScript</b>,{" "}
-              <b>Python</b>, <b>MySQL</b>.
+              <b>Python</b>, and <b>MySQL</b>.
             </p>
             <p>
               I am committed to keeping up to date with industry trends and
@@ -288,19 +270,14 @@ const App = () => {
               >
                 Facebook
               </a>
-              <a
-                href={cv}
-                download
-                target="_blank"
-                rel="noopener noreferrer"
-                className="socialButton"
-              >
+              <a href={cv} download className="socialButton">
                 Resume
               </a>
             </div>
           </div>
-        </div>
-        <div className="experience" id="experience">
+        </section>
+
+        <section className="experience" id="experience">
           {experiences.map((exp, index) => (
             <div className="experienceList" key={index}>
               <div className="nameExperience">
@@ -316,13 +293,14 @@ const App = () => {
               </div>
             </div>
           ))}
-        </div>
-        <div className="portfolio" id="portfolio">
+        </section>
+
+        <section className="portfolio" id="portfolio">
           <div className="namePortfolio">
             <h1>Portfolio</h1>
           </div>
           <span className="descPortfolio">
-            A glimpse of the Projects I've worked on
+            A glimpse of the projects I've worked on
           </span>
           <div className="menuPortfolio">
             <a
@@ -332,13 +310,6 @@ const App = () => {
               onClick={() => handleCategorySelect("Show All")}
             >
               Show All
-            </a>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              className="portfolioButton"
-            >
-              Data Mining
             </a>
             <a
               className={`portfolioButton ${
@@ -379,10 +350,14 @@ const App = () => {
                         src={modalClose}
                         onClick={handleModalClose}
                         className="styleClose"
+                        alt="Close"
                       />
                     </div>
                     <div className="modalHeader">
-                      <img src={portfolioItems[modalIndex].img} />
+                      <img
+                        src={portfolioItems[modalIndex].img}
+                        alt="Project Header"
+                      />
                     </div>
                     <div className="contentHeader">
                       <p className="headerProject">
@@ -404,7 +379,7 @@ const App = () => {
                           <div className="headerText">Page Home</div>
                           <hr />
                           <p>
-                            On the main page there are several features for
+                            On the main page, there are several features for
                             guests and users. Guests can only view club details
                             and the standings table. To view news and players,
                             you must first register and select your favorite
@@ -414,20 +389,19 @@ const App = () => {
                           </p>
                           <img src={premierLeague} alt="Home Premier League" />
                           <p>
-                            The standings table is done in real time by calling
-                            the API from a website. But each day is limited to
-                            100 times. Specifically in this table can see the
-                            results of the match in the previous year's
-                            competition.
+                            The standings table is updated in real-time by
+                            calling the API from a website. But each day is
+                            limited to 100 times. Specifically, in this table,
+                            you can see the results of the matches in the
+                            previous year's competition.
                           </p>
                           <img src={table} alt="Table Premier League" />
                           <div className="headerText">Search Function</div>
                           <hr />
                           <p>
-                            The use of the search function can be done based on
-                            : Team Name, Year of Establishment, Stadium, City
-                            according to the description on the club detail
-                            page.
+                            The search function can be used based on: Team Name,
+                            Year of Establishment, Stadium, City according to
+                            the description on the club detail page.
                           </p>
                           <img src={sf1} alt="Search Function with club name" />
                           <img
@@ -442,9 +416,9 @@ const App = () => {
                           <div className="headerText">Club Detail</div>
                           <hr />
                           <p>
-                            On this page you can see the club details as a
+                            On this page, you can see the club details as a
                             whole. Starting from the name, year of
-                            establishment, stadium and city of the club. To see
+                            establishment, stadium, and city of the club. To see
                             it, go to the main page and click on the club you
                             want to see.
                           </p>
@@ -468,13 +442,15 @@ const App = () => {
                             does not verify, the account cannot be used to view
                             players. The player page will correspond to the club
                             selected during registration. Starting from the
-                            position of goalkeeper, defender, midfielder and
+                            position of goalkeeper, defender, midfielder, and
                             forward.
                           </p>
                           <img src={players1} alt="Players Club" />
                           <img src={players2} alt="Players Club" />
                           <img src={players3} alt="Players Club" />
                           <img src={players4} alt="Players Club" />
+                          <div className="headerText">Read More</div>
+                          <hr />
                         </div>
                       )}
                       {modalIndex === 1 && (
@@ -502,9 +478,10 @@ const App = () => {
                           <p>
                             It can be seen in the graph for data testing, where
                             the predicted data values move in the same direction
-                            or follow the actual data, but in some periods there
-                            are very small differences so that these differences
-                            can be calculated using the evaluation model used.
+                            or follow the actual data, but in some periods,
+                            there are very small differences so that these
+                            differences can be calculated using the evaluation
+                            model used.
                           </p>
                           <img
                             src={compareStockTesting}
@@ -560,8 +537,9 @@ const App = () => {
               </div>
             )}
           </div>
-        </div>
-        <div className="contact" id="contact">
+        </section>
+
+        <section className="contact" id="contact">
           <div className="nameContact">
             <h1>Contact</h1>
           </div>
@@ -586,36 +564,12 @@ const App = () => {
                 LinkedIn
               </a>
               <a
-                href="https://www.instagram.com/derishardiansyah/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="socialButton"
-              >
-                Instagram
-              </a>
-              <a
-                href="https://twitter.com/drshardiansyahh"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="socialButton"
-              >
-                Twitter
-              </a>
-              <a
-                href="https://www.facebook.com/derishardiansyah1"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="socialButton"
-              >
-                Facebook
-              </a>
-              <a
                 href="https://github.com/derishardiansyah"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="socialButton"
               >
-                Github
+                GitHub
               </a>
               <a
                 href="mailto:derishardiansyah27@gmail.com"
@@ -623,22 +577,22 @@ const App = () => {
                 rel="noopener noreferrer"
                 className="socialButton"
               >
-                Mail
+                Email
               </a>
             </div>
           </div>
-        </div>
-        <div className="footer">
-          <div className="nameFooter">
-            <span>Copyright © 2024 Deris Hardiansyah Ismail</span>
+          <div className="footer">
+            <div className="nameFooter">
+              <span>Copyright © 2024 Deris Hardiansyah Ismail</span>
+            </div>
+            <div className="footerImg">
+              <img src={imgIcon} alt="Astronot" />
+            </div>
+            <div className="termsFooter">
+              <a>Privacy Policy</a> <a>Terms of Use</a>
+            </div>
           </div>
-          <div className="footerImg">
-            <img src={imgIcon} alt="Astronot" />
-          </div>
-          <div className="termsFooter">
-            <a>Privacy Policy</a> <a>Terms of Use</a>
-          </div>
-        </div>
+        </section>
       </div>
     </div>
   );
