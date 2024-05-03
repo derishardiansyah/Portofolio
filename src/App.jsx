@@ -31,6 +31,7 @@ const App = () => {
   const [isPortfolioActive, setIsPortfolioActive] = useState(false);
   const [isContactActive, setIsContactActive] = useState(false);
   const [modalIndex, setModalIndex] = useState(null);
+  const [toggleNavbar, setToggleNavbar] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("Show All");
   const [portfolioItems, setPortfolioItems] = useState([
     {
@@ -125,6 +126,10 @@ const App = () => {
     document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
   };
 
+  const handleToggleNavbar = () => {
+    setToggleNavbar(!toggleNavbar);
+  };
+
   const experiences = [
     {
       year: "2017",
@@ -186,11 +191,39 @@ const App = () => {
             </li>
           </ul>
         </div>
+        {/* Toggle Mobile Navbar */}
+        <div className="toggleMobileNavbar">
+          {toggleNavbar ? (
+            <i
+              className="fa-solid fa-bars fa-xl"
+              aria-hidden="true"
+              onClick={handleToggleNavbar}
+            ></i>
+          ) : (
+            <div className="sidebarNavbar">
+              <div className="closeModal">
+                <i
+                  className="fa-solid fa-xmark fa-xl"
+                  aria-hidden="true"
+                  onClick={handleToggleNavbar}
+                ></i>
+              </div>
+              <div className="sidebarList" onClick={handleToggleNavbar}>
+                <ul>
+                  <li onClick={handleScrollIntroduction}>Introduce</li>
+                  <li onClick={handleScrollToExperience}>Experiences</li>
+                  <li onClick={handleScrollToPortfolio}>Portfolio</li>
+                  <li onClick={handleScrollToContact}>Contact</li>
+                </ul>
+              </div>
+            </div>
+          )}
+        </div>
       </nav>
 
       {/* Content */}
       <div className="contentWrapper" id="home">
-        <div className="containerContent">
+        <section className="containerContent">
           <a className="nameStyle">Deris Hardiansyah Ismail</a>
           <hr className="line" />
           <ul className="listButton">
@@ -222,7 +255,7 @@ const App = () => {
           <div className="arrowDescription" onClick={handleScrollIntroduction}>
             <i className="fa fa-arrow-circle-down fa-3x" aria-hidden="true"></i>
           </div>
-        </div>
+        </section>
 
         <section className="containerIntroduce" id="introduce">
           <div className="imageProfile">

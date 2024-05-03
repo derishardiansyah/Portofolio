@@ -85,6 +85,10 @@ body {
   color: #69b3a2;
 }
 
+.toggleMobileNavbar {
+  display: none;
+}
+
 /* content */
 .contentWrapper {
   display: flex;
@@ -354,7 +358,7 @@ u {
   color: white;
 }
 
-.portfolioButton.active {
+.portfolioButton:active {
   background-color: #69b3a2;
   color: white;
 }
@@ -552,7 +556,7 @@ u {
 
 @media only screen and (max-width: 1200px) {
   .navbarLeft {
-    font-size: 11px;
+    font-size: 12px;
     margin-left: 50px;
     width: 30%;
   }
@@ -561,7 +565,7 @@ u {
     width: 70%;
   }
   .nameStyle {
-    font-size: 28px;
+    font-size: 25px;
   }
   .imageProfile {
     margin-left: 10px;
@@ -598,9 +602,62 @@ u {
     margin-right: 180px;
   }
   .footer {
-    column-gap: 200px;
+    column-gap: 180px;
   }
   .nameFooter {
     margin-left: 50px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .containerNavbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .navbarLeft {
+    font-size: 18px;
+  }
+  .navbarRight {
+    display: none;
+  }
+  .toggleMobileNavbar {
+    display: block;
+    cursor: pointer;
+  }
+  .sidebarNavbar {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #69b3a2;
+    z-index: 999;
+    color: black;
+  }
+  .sidebarNavbar ul li:hover {
+    color: white;
+  }
+  .sidebarList {
+    line-height: 40px;
+    font-weight: 700;
+    font-size: 15px;
+  }
+  .sidebarList ul {
+    margin-top: 30px;
+  }
+  .sidebarList li {
+    list-style: none;
+    position: relative;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+  }
+  .closeModal {
+    padding: 20px;
+    position: absolute;
+    right: 0;
+  }
+  .closeModal:hover {
+    color: white;
   }
 }
