@@ -464,6 +464,7 @@ u {
 
 .headerDescBody {
   text-align: left;
+  text-align: justify;
 }
 
 .linkSource {
@@ -822,9 +823,19 @@ u {
     width: 40%;
     text-align: center;
   }
+  .modalBackground {
+    width: 350px;
+    height: 550px;
+  }
+  .modalClose {
+    margin-bottom: 10px;
+  }
   .descContact {
     font-size: 15px;
     margin: 0px 50px 40px 50px;
+  }
+  .footer {
+    padding: 10px;
   }
   .footerRight {
     font-size: 12px;
