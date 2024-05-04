@@ -50,6 +50,13 @@ const App = () => {
       class: "dataScience",
       nameProject: "Stock Forecast",
     },
+    {
+      desc: "Netflix stock price visualisation using long short term memory algorithm",
+      img: saham,
+      link: "https://github.com/derishardiansyah/Data-Science",
+      class: "dataScience",
+      nameProject: "Stock Forecast",
+    },
   ]);
 
   const handleModalOpen = (index) => {
@@ -556,12 +563,6 @@ const App = () => {
                               https://stock-forecasting.streamlit.app/
                             </a>
                           </p>
-                        </div>
-                      )}
-                      {modalIndex === 2 && (
-                        <div className="headerDescBody">
-                          <div className="headerText">Feature</div>
-                          <hr />
                         </div>
                       )}
                     </div>
