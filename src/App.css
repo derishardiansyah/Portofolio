@@ -97,11 +97,14 @@ body {
 
 .containerContent {
   position: absolute;
+  width: 100%;
   top: 50%;
   right: 50%;
   transform: translate(50%, -50%);
   margin-top: 70px;
-  z-index: 2;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .nameStyle {
@@ -207,6 +210,7 @@ u {
   margin-top: 20px;
   line-height: 30px;
   font-size: 18px;
+  text-align: justify;
 }
 
 .socialMedia {
@@ -535,6 +539,14 @@ u {
   padding: 30px;
 }
 
+.nameFooter {
+  order: 1;
+}
+
+.footerImg {
+  order: 2;
+}
+
 .footerImg img {
   width: 40px;
   height: 40px;
@@ -546,6 +558,7 @@ u {
   flex-direction: row;
   column-gap: 20px;
   font-style: italic;
+  order: 3;
 }
 
 /* Mobile */
@@ -642,10 +655,15 @@ u {
     border-bottom: 1px solid #ddd;
     cursor: pointer;
   }
+  .modalBackground {
+    width: 700px;
+    height: 550px;
+  }
   .closeModal {
     padding: 20px;
     position: fixed;
     right: 0;
+    cursor: pointer;
   }
   .closeModal:hover {
     color: white;
@@ -702,5 +720,58 @@ u {
   .descContact {
     font-size: 18px;
     margin: 0px 100px 40px 100px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .navbarLeft {
+    margin-left: 0;
+  }
+  .descProfile {
+    font-size: 15px;
+    margin: 0;
+  }
+  .socialButton {
+    padding: 5px 20px;
+  }
+  .experience {
+    gap: 40px;
+    padding: 20px;
+  }
+  .namePortfolio {
+    font-size: 18px;
+  }
+  .descPortfolio {
+    font-size: 15px;
+  }
+  .modalBackground {
+    width: 550px;
+    height: 550px;
+  }
+  .nameContact {
+    font-size: 18px;
+  }
+  .descContact {
+    font-size: 15px;
+    margin: 0px 100px 40px 100px;
+  }
+  .footer {
+    display: flex;
+    flex-direction: row;
+    padding: 40px;
+  }
+  .footerRight {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    font-size: 14px;
+  }
+  .footerImg {
+    order: 1;
+  }
+  .termsFooter {
+    order: 2;
+  }
+  .nameFooter {
+    order: 3;
   }
 }
