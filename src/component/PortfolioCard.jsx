@@ -16,19 +16,25 @@ const PortfolioCard = ({ img, alt, desc, onClick }) => {
   };
 
   return (
-    <Card
-      sx={{
-        width: 350,
-        height: 350,
+    <div
+      className="portfolioCard"
+      style={{
         display: "flex",
-        backgroundColor: isHovered ? "#69b3a2" : "transparent",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100%",
       }}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      onClick={onClick}
     >
-      <CardActionArea>
-        <div style={{ position: "relative" }}>
+      <Card
+        sx={{
+          maxWidth: 350,
+          backgroundColor: isHovered ? "#69b3a2" : "transparent",
+        }}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        onClick={onClick}
+      >
+        <CardActionArea>
           <CardMedia
             component="img"
             height="auto"
@@ -55,9 +61,9 @@ const PortfolioCard = ({ img, alt, desc, onClick }) => {
               <p style={{ marginTop: "50px", fontSize: "16px" }}>{desc}</p>
             </div>
           )}
-        </div>
-      </CardActionArea>
-    </Card>
+        </CardActionArea>
+      </Card>
+    </div>
   );
 };
 

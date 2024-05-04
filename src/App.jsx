@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import "@fortawesome/fontawesome-free/css/all.css";
 import "./App.css";
 import imgProfile from "./assets/img.png";
@@ -42,13 +43,6 @@ const App = () => {
       nameProject: "Club Information Portal and Standings",
       descProject:
         "This project is a web application that provides information about premier league football clubs and their standings. The application is built using HTML, CSS, and JavaScript, and it is deployed on a web server using Node.js and Express.js.",
-    },
-    {
-      desc: "Netflix stock price visualisation using long short term memory algorithm",
-      img: saham,
-      link: "https://github.com/derishardiansyah/Data-Science",
-      class: "dataScience",
-      nameProject: "Stock Forecast",
     },
     {
       desc: "Netflix stock price visualisation using long short term memory algorithm",
@@ -200,32 +194,31 @@ const App = () => {
         </div>
         {/* Toggle Mobile Navbar */}
         <div className="toggleMobileNavbar">
-          {toggleNavbar ? (
-            <i
-              className="fa-solid fa-bars fa-xl"
-              aria-hidden="true"
-              onClick={handleToggleNavbar}
-            ></i>
-          ) : (
-            <div className="sidebarNavbar">
-              <div className="closeModal">
-                <i
-                  className="fa-solid fa-xmark fa-xl"
-                  aria-hidden="true"
-                  onClick={handleToggleNavbar}
-                ></i>
-              </div>
-              <div className="sidebarList" onClick={handleToggleNavbar}>
-                <ul>
-                  <li onClick={handleScrollIntroduction}>Introduce</li>
-                  <li onClick={handleScrollToExperience}>Experiences</li>
-                  <li onClick={handleScrollToPortfolio}>Portfolio</li>
-                  <li onClick={handleScrollToContact}>Contact</li>
-                </ul>
-              </div>
-            </div>
-          )}
+          <i
+            className="fa-solid fa-bars fa-xl"
+            aria-hidden="true"
+            onClick={handleToggleNavbar}
+          ></i>
         </div>
+        {toggleNavbar && (
+          <div className="sidebarNavbar">
+            <div className="closeModal">
+              <i
+                className="fa-solid fa-xmark fa-xl"
+                aria-hidden="true"
+                onClick={handleToggleNavbar}
+              ></i>
+            </div>
+            <div className="sidebarList" onClick={handleToggleNavbar}>
+              <ul>
+                <li onClick={handleScrollIntroduction}>Introduce</li>
+                <li onClick={handleScrollToExperience}>Experiences</li>
+                <li onClick={handleScrollToPortfolio}>Portfolio</li>
+                <li onClick={handleScrollToContact}>Contact</li>
+              </ul>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Content */}
@@ -257,7 +250,7 @@ const App = () => {
             <p>
               Welcome to Deris Hardiansyah Ismail <u>homepage</u>.
             </p>
-            <p>I am a data practitioner and website developer.</p>
+            <p>I am a learn data and website developer.</p>
           </div>
           <div className="arrowDescription" onClick={handleScrollIntroduction}>
             <i className="fa fa-arrow-circle-down fa-3x" aria-hidden="true"></i>
@@ -320,17 +313,21 @@ const App = () => {
         <section className="experience" id="experience">
           {experiences.map((exp, index) => (
             <div className="experienceList" key={index}>
-              <div className="nameExperience">
-                <span>{exp.department}</span>
-              </div>
-              <hr className="lineExperience" />
-              <div className="nameExperience">
-                <span>{exp.company}</span>
-              </div>
-              <div className={exp.classRound}></div>
-              <div className={exp.classYear}>
-                <span>{exp.year}</span>
-              </div>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                style={{ marginBottom: "10px" }}
+              >
+                <div className="nameExperience">
+                  <span>{exp.department}</span>
+                </div>
+                <hr className="lineExperience" />
+                <div className="nameExperience">
+                  <span>{exp.company}</span>
+                </div>
+              </motion.div>
             </div>
           ))}
         </section>

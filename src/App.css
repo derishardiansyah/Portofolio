@@ -100,8 +100,6 @@ body {
   top: 50%;
   right: 50%;
   transform: translate(50%, -50%);
-  max-width: 600px;
-  padding: 2em 3em;
   margin-top: 70px;
   z-index: 2;
 }
@@ -249,18 +247,19 @@ u {
   line-height: 20px;
   gap: 80px;
   justify-content: center;
+  position: relative;
 }
 
 .lineExperience {
-  width: 100%;
+  flex: 1;
   height: 1px;
   background-color: #69b3a2;
 }
 
-.rounded {
+/* .rounded {
   position: absolute;
   left: 38%;
-  top: 183%;
+  top: 186.5%;
   width: 12px;
   height: 12px;
   border-radius: 100%;
@@ -270,7 +269,7 @@ u {
 .yearExperience {
   position: absolute;
   left: 37.5%;
-  top: 185%;
+  top: 189%;
   width: 15px;
   color: black 2px solid;
 }
@@ -278,7 +277,7 @@ u {
 .roundedSecond {
   position: absolute;
   left: 64%;
-  top: 183%;
+  top: 186.5%;
   width: 12px;
   height: 12px;
   border-radius: 100%;
@@ -288,7 +287,7 @@ u {
 .yearExperienceSecond {
   position: absolute;
   left: 63.5%;
-  top: 185%;
+  top: 189%;
   width: 15px;
   color: black 2px solid;
 }
@@ -296,7 +295,7 @@ u {
 .roundedThird {
   position: absolute;
   left: 79%;
-  top: 183%;
+  top: 186.5%;
   width: 12px;
   height: 12px;
   border-radius: 100%;
@@ -306,10 +305,10 @@ u {
 .yearExperienceThird {
   position: absolute;
   left: 78.5%;
-  top: 185%;
+  top: 189%;
   width: 15px;
   color: black 2px solid;
-}
+} */
 
 .portfolio {
   display: flex;
@@ -340,7 +339,6 @@ u {
   column-gap: 20px;
   margin-top: 60px;
   justify-content: center;
-  cursor: pointer;
   text-transform: uppercase;
 }
 
@@ -352,6 +350,7 @@ u {
   border: 2px solid #69b3a2;
   text-decoration: none;
   transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
 }
 
 .portfolioButton:hover {
@@ -364,14 +363,13 @@ u {
   color: white;
 }
 
-.Project {
-  padding: 70px 120px 50px 160px;
-}
-
 .cardProject {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 40px;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
 }
 
 .cardProject img {
@@ -529,15 +527,12 @@ u {
 .footer {
   display: flex;
   flex-direction: row;
-  column-gap: 250px;
+  justify-content: space-between;
   background-color: #f8f9fa;
   height: 60px;
   align-items: center;
   margin-top: 40px;
-}
-
-.nameFooter {
-  margin-left: 180px;
+  padding: 30px;
 }
 
 .footerImg img {
@@ -566,7 +561,7 @@ u {
     width: 70%;
   }
   .nameStyle {
-    font-size: 25px;
+    font-size: 30px;
   }
   .imageProfile {
     margin-left: 10px;
@@ -601,12 +596,6 @@ u {
   .descContact {
     margin-left: 180px;
     margin-right: 180px;
-  }
-  .footer {
-    column-gap: 180px;
-  }
-  .nameFooter {
-    margin-left: 50px;
   }
 }
 
@@ -644,26 +633,25 @@ u {
     line-height: 40px;
     font-weight: 700;
     font-size: 15px;
-  }
-  .sidebarList ul {
-    margin-top: 3%;
+    margin-top: 60px;
   }
   .sidebarList li {
     list-style: none;
     position: relative;
     padding: 20px;
     border-bottom: 1px solid #ddd;
+    cursor: pointer;
   }
   .closeModal {
     padding: 20px;
-    position: absolute;
+    position: fixed;
     right: 0;
   }
   .closeModal:hover {
     color: white;
   }
   .nameStyle {
-    font-size: 20px;
+    font-size: 25px;
   }
   .containerIntroduce {
     display: flex;
@@ -674,9 +662,6 @@ u {
   .socialMedia {
     margin-top: 0;
   }
-  /* .socialButton {
-    padding: 5px 20px;
-  } */
   .experienceList {
     font-size: 12px;
   }
@@ -710,52 +695,12 @@ u {
   .descPortfolio {
     font-size: 18px;
   }
-  .Project {
-    padding: 70px 50px 50px 50px;
-  }
-  .cardProject {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-  .cardProject img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-  .modalOverlay {
-    position: fixed;
-    transform: translate(-50%, -50%);
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-  }
-  .modalBackground {
-    width: 600px;
-    height: 450px;
-  }
-  .headerDescBody img {
-    width: 100%;
-    height: 200px;
-  }
   .nameContact {
     font-size: 22px;
     margin-bottom: 0;
   }
   .descContact {
     font-size: 18px;
-    margin-left: 100px;
-    margin-right: 100px;
-    margin-bottom: 40px;
-  }
-  .footer {
-    flex-direction: column;
-    row-gap: 40px;
-    height: auto;
-    padding: 10px;
-  }
-  .nameFooter {
-    margin-left: 0;
+    margin: 0px 100px 40px 100px;
   }
 }
