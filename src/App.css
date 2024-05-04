@@ -367,6 +367,11 @@ u {
   color: white;
 }
 
+.portfolioButton.active {
+  background-color: #69b3a2;
+  color: white;
+}
+
 .cardProject {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -773,5 +778,61 @@ u {
   }
   .nameFooter {
     order: 3;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .containerIntroduce {
+    padding: 20px;
+  }
+  .imageProfile img {
+    width: 200px;
+    height: 200px;
+  }
+  .descProfile {
+    font-size: 13px;
+  }
+  .socialMedia {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .socialButton {
+    width: 40%;
+    text-align: center;
+  }
+  .experience {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    row-gap: 20px;
+  }
+  .menuPortfolio {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .portfolioButton {
+    width: 40%;
+    text-align: center;
+  }
+  .descContact {
+    font-size: 15px;
+    margin: 0px 50px 40px 50px;
+  }
+  .footerRight {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 376px) {
+  .nameStyle {
+    font-size: 20px;
   }
 }
