@@ -88,6 +88,9 @@ body {
 .toggleMobileNavbar {
   display: none;
 }
+.sidebarNavbar {
+  display: none;
+}
 
 /* content */
 .contentWrapper {
@@ -635,6 +638,7 @@ u {
     cursor: pointer;
   }
   .sidebarNavbar {
+    display: block;
     width: 100vw;
     height: 100vh;
     position: absolute;
