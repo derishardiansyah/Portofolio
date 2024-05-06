@@ -261,13 +261,13 @@ u {
   margin-bottom: 20px;
 }
 
-.experienceTitle {
+/* .experienceTitle {
   width: 60%;
   display: flex;
   flex-direction: row;
   column-gap: 40px;
   justify-content: space-between;
-}
+} */
 
 .lineExperience {
   flex: 1;
@@ -830,9 +830,7 @@ u {
   }
   .footer {
     padding: 10px;
-  }
-  .footerRight {
-    font-size: 12px;
+    font-size: 15px;
   }
 }
 

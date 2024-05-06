@@ -311,34 +311,34 @@ const App = () => {
         </section>
 
         <section className="experience" id="experience">
-          <div className="dash">
+          {/* <div className="dash">
             <div className="dashExperience"></div>
-          </div>
-          <div className="experienceTitle">
-            {experiences.map((exp, index) => (
-              <div className="experienceList" key={index}>
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  style={{ marginBottom: "10px" }}
-                >
-                  <div className="nameExperience">
-                    <span>{exp.department}</span>
-                  </div>
-                  <hr className="lineExperience" />
-                  <div className="nameExperience">
-                    <span>{exp.company}</span>
-                  </div>
-                  <div className={exp.classRound}></div>
+          </div> */}
+          {/* <div className="experienceTitle"> */}
+          {experiences.map((exp, index) => (
+            <div className="experienceList" key={index}>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                style={{ marginBottom: "10px" }}
+              >
+                <div className="nameExperience">
+                  <span>{exp.department}</span>
+                </div>
+                <hr className="lineExperience" />
+                <div className="nameExperience">
+                  <span>{exp.company}</span>
+                </div>
+                {/* <div className={exp.classRound}></div>
                   <div className={exp.classYear}>
                     <span>{exp.year}</span>
-                  </div>
-                </motion.div>
-              </div>
-            ))}
-          </div>
+                  </div> */}
+              </motion.div>
+            </div>
+          ))}
+          {/* </div> */}
         </section>
 
         <section className="portfolio" id="portfolio">
