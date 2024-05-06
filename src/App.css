@@ -247,14 +247,26 @@ u {
 
 .experience {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding: 60px;
   text-align: center;
-  width: 100%;
   line-height: 20px;
-  gap: 80px;
+  row-gap: 40px;
   justify-content: center;
-  position: relative;
+  align-items: center;
+}
+.dash {
+  width: 60%;
+  border-top: 2px dashed silver;
+  margin-bottom: 20px;
+}
+
+.experienceTitle {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  column-gap: 40px;
+  justify-content: space-between;
 }
 
 .lineExperience {
@@ -263,10 +275,10 @@ u {
   background-color: #69b3a2;
 }
 
-/* .rounded {
+.rounded {
   position: absolute;
-  left: 38%;
-  top: 186.5%;
+  left: 29%;
+  top: 183%;
   width: 12px;
   height: 12px;
   border-radius: 100%;
@@ -275,16 +287,16 @@ u {
 
 .yearExperience {
   position: absolute;
-  left: 37.5%;
-  top: 189%;
+  left: 28.5%;
+  top: 186%;
   width: 15px;
   color: black 2px solid;
 }
 
 .roundedSecond {
   position: absolute;
-  left: 64%;
-  top: 186.5%;
+  left: 51%;
+  top: 183%;
   width: 12px;
   height: 12px;
   border-radius: 100%;
@@ -293,16 +305,16 @@ u {
 
 .yearExperienceSecond {
   position: absolute;
-  left: 63.5%;
-  top: 189%;
+  left: 50.5%;
+  top: 186%;
   width: 15px;
   color: black 2px solid;
 }
 
 .roundedThird {
   position: absolute;
-  left: 79%;
-  top: 186.5%;
+  left: 72%;
+  top: 183%;
   width: 12px;
   height: 12px;
   border-radius: 100%;
@@ -311,11 +323,11 @@ u {
 
 .yearExperienceThird {
   position: absolute;
-  left: 78.5%;
-  top: 189%;
+  left: 71.5%;
+  top: 186%;
   width: 15px;
   color: black 2px solid;
-} */
+}
 
 .portfolio {
   display: flex;
