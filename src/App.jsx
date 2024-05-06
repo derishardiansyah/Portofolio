@@ -622,18 +622,15 @@ const App = () => {
             </div>
           </div>
           <div className="footer">
-            <div className="footerLeft">
-              <div className="footerImg">
-                <img src={imgIcon} alt="Astronot" />
-              </div>
+            <div className="nameFooter">
+              <span>Copyright © 2024 Deris Hardiansyah Ismail</span>
             </div>
-            <div className="footerRight">
-              <div className="termsFooter">
-                <a>Privacy Policy</a> <a>Terms of Use</a>
-              </div>
-              <div className="nameFooter">
-                <span>Copyright © 2024 Deris Hardiansyah Ismail</span>
-              </div>
+            <div className="footerImg">
+              <img src={imgIcon} alt="Astronot" />
+            </div>
+
+            <div className="termsFooter">
+              <a>Privacy Policy</a> <a>Terms of Use</a>
             </div>
           </div>
         </section>

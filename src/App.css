@@ -560,14 +560,6 @@ u {
   padding: 30px;
 }
 
-.nameFooter {
-  order: 1;
-}
-
-.footerImg {
-  order: 2;
-}
-
 .footerImg img {
   width: 40px;
   height: 40px;
@@ -579,7 +571,6 @@ u {
   flex-direction: row;
   column-gap: 20px;
   font-style: italic;
-  order: 3;
 }
 
 /* Mobile */
@@ -776,25 +767,12 @@ u {
     font-size: 15px;
     margin: 0px 100px 40px 100px;
   }
+
   .footer {
     display: flex;
-    flex-direction: row;
-    padding: 40px;
-  }
-  .footerRight {
-    display: flex;
     flex-direction: column;
-    row-gap: 20px;
-    font-size: 14px;
-  }
-  .footerImg {
-    order: 1;
-  }
-  .termsFooter {
-    order: 2;
-  }
-  .nameFooter {
-    order: 3;
+    row-gap: 30px;
+    height: auto;
   }
 }
 
