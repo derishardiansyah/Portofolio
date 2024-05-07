@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, useTransform, useViewportScroll } from "framer-motion";
 import "@fortawesome/fontawesome-free/css/all.css";
 import "./App.css";
 import imgProfile from "./assets/img.png";
@@ -27,6 +27,8 @@ import PortfolioCard from "./component/PortfolioCard";
 import cv from "./assets/file/Resume.pdf";
 
 const App = () => {
+  const { scrollYProgress } = useViewportScroll();
+  const scale = useTransform(scrollYProgress, [0, 1], [0.2, 2]);
   const [isIntroduceActive, setIsIntroduceActive] = useState(false);
   const [isExperienceActive, setIsExperienceActive] = useState(false);
   const [isPortfolioActive, setIsPortfolioActive] = useState(false);
@@ -67,6 +69,32 @@ const App = () => {
     setSelectedCategory(category);
   };
 
+  const handleScrollIntroduction = () => {
+    document.getElementById("introduce").scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleScrollToExperience = () => {
+    document
+      .getElementById("experience")
+      .scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleScrollToHome = () => {
+    document.getElementById("home").scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleScrollToPortfolio = () => {
+    document.getElementById("portfolio").scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleScrollToContact = () => {
+    document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleToggleNavbar = () => {
+    setToggleNavbar(!toggleNavbar);
+  };
+
   const filteredPortfolioItems =
     selectedCategory === "Show All"
       ? portfolioItems
@@ -105,32 +133,6 @@ const App = () => {
     };
   }, []);
 
-  const handleScrollIntroduction = () => {
-    document.getElementById("introduce").scrollIntoView({ behavior: "smooth" });
-  };
-
-  const handleScrollToExperience = () => {
-    document
-      .getElementById("experience")
-      .scrollIntoView({ behavior: "smooth" });
-  };
-
-  const handleScrollToHome = () => {
-    document.getElementById("home").scrollIntoView({ behavior: "smooth" });
-  };
-
-  const handleScrollToPortfolio = () => {
-    document.getElementById("portfolio").scrollIntoView({ behavior: "smooth" });
-  };
-
-  const handleScrollToContact = () => {
-    document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
-  };
-
-  const handleToggleNavbar = () => {
-    setToggleNavbar(!toggleNavbar);
-  };
-
   const experiences = [
     {
       year: "2017",
@@ -154,6 +156,17 @@ const App = () => {
       classYear: "yearExperienceThird",
     },
   ];
+
+  const variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 0.5, // delay sebelum muncul
+      },
+    },
+  };
 
   return (
     <div className="container">
@@ -311,18 +324,14 @@ const App = () => {
         </section>
 
         <section className="experience" id="experience">
-          {/* <div className="dash">
-            <div className="dashExperience"></div>
-          </div> */}
-          {/* <div className="experienceTitle"> */}
           {experiences.map((exp, index) => (
             <div className="experienceList" key={index}>
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                style={{ marginBottom: "10px" }}
+                variants={variants}
+                initial="hidden"
+                animate="visible"
+                style={{ marginBottom: "10px", scale }}
               >
                 <div className="nameExperience">
                   <span>{exp.department}</span>
@@ -331,14 +340,9 @@ const App = () => {
                 <div className="nameExperience">
                   <span>{exp.company}</span>
                 </div>
-                {/* <div className={exp.classRound}></div>
-                  <div className={exp.classYear}>
-                    <span>{exp.year}</span>
-                  </div> */}
               </motion.div>
             </div>
           ))}
-          {/* </div> */}
         </section>
 
         <section className="portfolio" id="portfolio">
