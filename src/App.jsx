@@ -22,7 +22,7 @@ import compareStockTesting from "./assets/CompareStockTesting.png";
 import result from "./assets/result.png";
 import imgDeployment from "./assets/deployment.png";
 import modalClose from "./assets/close.png";
-import imgIcon from "../public/astronot.svg";
+import imgIcon from "./astronot.svg";
 import PortfolioCard from "./component/PortfolioCard";
 import cv from "./assets/file/Resume.pdf";
 
@@ -316,7 +316,7 @@ const App = () => {
               >
                 Facebook
               </a>
-              <a href={cv} download className="socialButton">
+              <a href={cv} className="socialButton">
                 Resume
               </a>
             </div>
