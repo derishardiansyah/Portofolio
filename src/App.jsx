@@ -22,6 +22,7 @@ import compareStockTesting from "./assets/CompareStockTesting.png";
 import result from "./assets/result.png";
 import imgDeployment from "./assets/deployment.png";
 import modalClose from "./assets/close.png";
+import geografis from "./assets/geografis.png";
 import imgIcon from "/astronot.svg";
 import PortfolioCard from "./component/PortfolioCard";
 import cv from "./assets/file/Resume.pdf";
@@ -52,6 +53,13 @@ const App = () => {
       link: "https://github.com/derishardiansyah/Data-Science",
       class: "dataScience",
       nameProject: "Stock Forecast",
+    },
+    {
+      desc: "Website-based geographic information system for UPT and Institutions in the field of wildlife conservation areas",
+      img: geografis,
+      link: "https://github.com/derishardiansyah/Sistem-Informasi-Georafis-UPT-dan-Lembaga-dibidang-Hidupanliar",
+      class: "developer",
+      nameProject: "Geografis UPT and Institute",
     },
   ]);
 
