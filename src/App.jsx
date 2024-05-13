@@ -23,6 +23,12 @@ import result from "./assets/result.png";
 import imgDeployment from "./assets/deployment.png";
 import modalClose from "./assets/close.png";
 import geografis from "./assets/geografis.png";
+import homeGeografis from "./assets/homeGeografis.png";
+import viewupt from "./assets/viewupt.png";
+import viewinstitute from "./assets/viewinstitute.png";
+import detailupt from "./assets/detailupt.png";
+import detailinstitute from "./assets/detailinstitute.png";
+import profilecreator from "./assets/profilecreator.png";
 import imgIcon from "/astronot.svg";
 import PortfolioCard from "./component/PortfolioCard";
 import cv from "./assets/file/Resume.pdf";
@@ -507,8 +513,6 @@ const App = () => {
                           <img src={players2} alt="Players Club" />
                           <img src={players3} alt="Players Club" />
                           <img src={players4} alt="Players Club" />
-                          <div className="headerText">Read More</div>
-                          <hr />
                         </div>
                       )}
                       {modalIndex === 1 && (
@@ -581,6 +585,62 @@ const App = () => {
                               https://stock-forecasting.streamlit.app/
                             </a>
                           </p>
+                        </div>
+                      )}
+                      {modalIndex === 2 && (
+                        <div className="headerDescBody">
+                          <div className="headerText">Feature</div>
+                          <hr />
+                          <ol>
+                            <li>Geografis UPT and Institute</li>
+                            <li>UPT Detail</li>
+                            <li>Institute Detail</li>
+                            <li>Profile Creator</li>
+                          </ol>
+                          <div className="headerText">Page Home</div>
+                          <hr />
+                          <p>
+                            If you want to enter the main page, users must first
+                            create an account. On the main page, users will see
+                            a geographical map of UPT and Lembaga. On the map
+                            the user can click on one of the options to display
+                            UPT or Institution only or both. If you click on the
+                            pointer, it will display the profile of the UPT or
+                            Institution. On the left side of the user there will
+                            be an option to display the entire Institute and on
+                            the right side to display the entire UPT. If you
+                            click on one of them, it will refer to the
+                            description of the UPT or Institute.
+                          </p>
+                          <img
+                            src={homeGeografis}
+                            alt="Home Geografis UPT and Institute"
+                          />
+                          <p>View UPT info : UPT name, Province.</p>
+                          <img src={viewupt} alt="View UPT" />
+                          <p>
+                            View Institute info : Institute name, issue,
+                            activity area and year.
+                          </p>
+                          <img src={viewinstitute} alt="View UPT" />
+                          <div className="headerText">UPT Detail</div>
+                          <hr />
+                          <p>
+                            View detail UPT : UPT name, image, address,
+                            province, contact and official website.
+                          </p>
+                          <img src={detailupt} alt="Detail UPT" />
+                          <div className="headerText">Institute Detail</div>
+                          <hr />
+                          <p>
+                            View detail Institute: Institute name, image,
+                            description, contact and official website.
+                          </p>
+                          <img src={detailinstitute} alt="Detail Institute" />
+                          <div className="headerText">Profile Creator</div>
+                          <hr />
+                          <p>View description creator.</p>
+                          <img src={profilecreator} alt="Profile Creator" />
                         </div>
                       )}
                     </div>
